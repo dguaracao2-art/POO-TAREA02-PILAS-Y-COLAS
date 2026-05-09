@@ -1,23 +1,53 @@
 from modelo.pila import Pila
 from modelo.cola import Cola
-from faker import Faker
 
-# Inicializamos Faker
-fake = Faker()
+print("=" * 50)
+print("   TAD PILA — Comportamiento LIFO")
+print("=" * 50)
 
-def ejecutar_prueba():
-    mi_pila = Pila()
-    mi_cola = Cola()
+pila = Pila()
+pila.push("A")
+pila.push("B")
+pila.push("C")
 
-    print("--- Generando datos aleatorios con Faker ---")
-    for _ in range(5):
-        nombre = fake.name()
-        mi_pila.push(nombre)
-        mi_cola.push(nombre)
-        print(f"Insertando: {nombre}")
+print(f"Pila inicial:     {pila}")
+print(f"Tope (top):       {pila.top()}")
+print(f"Extrae (pop):     {pila.pop()}")
+print(f"Pila luego pop:   {pila}")
+print(f"Tamaño (size):    {pila.size()}")
+print(f"¿Vacía?:          {pila.isEmpty()}")
 
-    print(f"\n[PILA] El último en entrar fue: {mi_pila.top()}")
-    print(f"[COLA] El primero en entrar fue: {mi_cola.top()}")
+pila2 = Pila()
+pila2.push("X")
+pila2.push("Y")
+pila.pushAll(pila2)
+print(f"Luego pushAll:    {pila}")
 
-if __name__ == "__main__":
-    ejecutar_prueba()
+invertida = pila.reverse()
+print(f"Pila invertida:   {invertida}")
+
+print()
+print("=" * 50)
+print("   TAD COLA — Comportamiento FIFO")
+print("=" * 50)
+
+cola = Cola()
+cola.push("A")
+cola.push("B")
+cola.push("C")
+
+print(f"Cola inicial:     {cola}")
+print(f"Frente (top):     {cola.top()}")
+print(f"Extrae (pop):     {cola.pop()}")
+print(f"Cola luego pop:   {cola}")
+print(f"Tamaño (size):    {cola.size()}")
+print(f"¿Vacía?:          {cola.isEmpty()}")
+
+cola2 = Cola()
+cola2.push("X")
+cola2.push("Y")
+cola.pushAll(cola2)
+print(f"Luego pushAll:    {cola}")
+
+invertida_cola = cola.reverse()
+print(f"Cola invertida:   {invertida_cola}")
