@@ -1,5 +1,3 @@
-# modelo/pila.py
-
 class Pila:
     """Implementación del TAD Pila (LIFO)."""
 
@@ -24,6 +22,14 @@ class Pila:
 
     def size(self):
         return len(self._elementos)
+
+    def contiene(self, elemento):
+
+        for actual in self._elementos:
+
+            if actual == elemento:
+                return True
+        return False
 
     def reverse(self):
         nueva = Pila()
