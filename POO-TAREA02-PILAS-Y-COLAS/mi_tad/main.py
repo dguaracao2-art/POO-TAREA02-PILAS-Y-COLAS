@@ -6,15 +6,30 @@ print("   TAD PILA — Comportamiento LIFO")
 print("=" * 50)
 
 pila = Pila()
+pila.push("A")
+pila.push("B")
+pila.push("C")
 
-pila.push(10)
-pila.push(20)
-pila.push(30)
+print(f"Pila inicial:     {pila}")
+print(f"Tope (top):       {pila.top()}")
+print(f"Extrae (pop):     {pila.pop()}")
+print(f"Pila luego pop:   {pila}")
+print(f"Tamaño (size):    {pila.size()}")
+print(f"¿Vacía?:          {pila.isEmpty()}")
 
-print(pila.contiene(20))
-print(pila.contiene(99))
-print(pila)
+pila2 = Pila()
+pila2.push("X")
+pila2.push("Y")
+pila.pushAll(pila2)
+print(f"Luego pushAll:    {pila}")
 
+invertida = pila.reverse()
+print(f"Pila invertida:   {invertida}")
+
+print()
+print("=" * 50)
+print("   TAD COLA — Comportamiento FIFO")
+print("=" * 50)
 
 cola = Cola()
 cola.push("A")
@@ -36,3 +51,35 @@ print(f"Luego pushAll:    {cola}")
 
 invertida_cola = cola.reverse()
 print(f"Cola invertida:   {invertida_cola}")
+
+
+pila = Pila()
+pila.push(10)
+pila.push(20)
+pila.push(30)
+
+print(pila.contiene(20))
+print(pila.contiene(99))
+print(pila)
+
+pila = Pila()
+pila.push("A")
+pila.push("B")
+pila.push("C")
+
+copia = pila.copiar()
+
+print(copia.pop())
+print(copia.pop())   
+print(pila)          
+
+cola = Cola()
+cola.push("A")
+cola.push("B")
+cola.push("C")
+
+copia = cola.copiar()
+
+print(copia.pop())  
+print(copia.pop())
+print(cola)    

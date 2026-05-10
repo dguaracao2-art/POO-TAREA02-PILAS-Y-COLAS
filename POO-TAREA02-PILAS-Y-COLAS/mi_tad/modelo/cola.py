@@ -23,6 +23,15 @@ class Cola:
     def size(self):
         return len(self._elementos)
 
+    def copiar(self):
+
+        nueva = Cola()
+
+        for elemento in self._elementos:
+            nueva.push(elemento)
+
+        return nueva
+
     def reverse(self):
         nueva = Cola()
         for elemento in reversed(self._elementos):

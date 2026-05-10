@@ -40,6 +40,18 @@ class Pila:
     def pushAll(self, otraPila):
         for elemento in otraPila._elementos:
             self.push(elemento)
+    
+    def copiar(self):
+
+        nueva = Pila()
+
+        for elemento in self._elementos:
+            nueva.push(elemento)
+
+        return nueva
+
+    def __str__(self):
+        return f"Pila({self._elementos})"
 
     def __str__(self):
         return f"Pila({self._elementos})"
