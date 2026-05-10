@@ -1,5 +1,3 @@
-# modelo/cola.py
-
 class Cola:
     """Implementación del TAD Cola (FIFO)."""
 
